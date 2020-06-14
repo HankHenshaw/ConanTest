@@ -8,15 +8,15 @@ set(HEADERS myclass.h)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_executable(ipFilter ${SOURCES} ${HEADERS})
+add_executable(ipfilter ${SOURCES} ${HEADERS})
 
-set_target_properties(ipFilter PROPERTIES
+set_target_properties(ipfilter PROPERTIES
     CXX_STANDARD 17
     CXX_STANDARD_REQUIRED ON
     COMPILE_OPTIONS "-Wall;-Wpedantic;-Wextra"
 )
 
-install(TARGETS IpFilter RUNTIME DESTINATION bin)
+install(TARGETS ipfilter RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
