@@ -18,4 +18,4 @@ deploy:
   provider: script
   skip_cleanup: true
   script:
-- curl -f -T IpFilter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uhankhenshaw:$BINTRAY_API_KEY "https://api.bintray.com/content/hankhenshaw/MidRep/MiddlePack/$TRAVIS_BUILD_NUMBER/IpFilter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
+  - curl -f -T IpFilter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb -uhankhenshaw:$BINTRAY_API_KEY "https://api.bintray.com/content/hankhenshaw/MidRep/MiddlePack/$TRAVIS_BUILD_NUMBER/IpFilter-0.0.$TRAVIS_BUILD_NUMBER-Linux.deb;deb_distribution=xenial;deb_component=main;deb_architecture=amd64;publish=1"
