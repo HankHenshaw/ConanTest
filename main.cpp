@@ -83,7 +83,7 @@ int main()
     int firstFilter = 1;
 
     #ifdef RANGE
-        ranges::for_each(s | ranges::view::filter([firstFilter](auto &obj){return obj.getArr().at(0) == firstFilter;}), 
+        ranges::for_each(s | ranges::views::filter([firstFilter](auto &obj){return obj.getArr().at(0) == firstFilter;}), 
                                         [](auto &obj){std::cout << obj << '\n';});
     #else
         std::copy_if(s.begin(), s.end(), std::ostream_iterator<MyClass>(std::cout, "\n"), [firstFilter](MyClass lhs){
@@ -96,7 +96,7 @@ int main()
     int secondFilter2 = 70;
 
     #ifdef RANGE
-        ranges::for_each(s | ranges::view::filter([secondFilter1, secondFilter2](auto& obj)
+        ranges::for_each(s | ranges::views::filter([secondFilter1, secondFilter2](auto& obj)
             {return obj.getArr().at(0) == secondFilter1 && obj.getArr().at(1) == secondFilter2;}), 
             [](auto &obj){std::cout << obj << '\n';});
     #else
@@ -111,7 +111,7 @@ int main()
     int thirdFilter = 46;
 
     #ifdef RANGE
-        ranges::for_each(s | ranges::view::filter([thirdFilter](auto& obj)
+        ranges::for_each(s | ranges::views::filter([thirdFilter](auto& obj)
             { 
                 return std::any_of(obj.getArr().begin(), obj.getArr().end(), [thirdFilter](auto num){
                     return num == thirdFilter;
